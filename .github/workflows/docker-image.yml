@@ -26,6 +26,13 @@ jobs:
         uses: docker/metadata-action@v4.0.1
         with:
           images: j4k03/fcserver
+          labels: |
+            j4k03.fcserver.title=Fadecandy Server
+            j4k03.fcserver.description=Fadecandy server for controlling multiple Fadecandy boards
+            j4k03.fcserver.vendor=J4K03
+            j4k03.fcserver.licenses=MIT
+            j4k03.fcserver.source=https://github.com/J4K03/fcserver-docker
+            
           
       - name: Build and push Docker image
         uses: docker/build-push-action@v3.0.0
