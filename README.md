@@ -8,7 +8,7 @@ This is an unofficial Docker image for the [Fadecandy Server](https://github.com
 ```bash
 docker run -p 7890:7890 --device=/dev/bus/usb/001/001 fcserver
 ```
-I've mapped all the USB devices here with the `-v` option. This is insecure and shouldn't be used. Better option would be using `--device` or even better with `--device-cgroup-rule`. The container needs at least one USB device attached in order to start.
+You can specify Fadecandy devices using the `--device` option. The container needs at least one USB device attached in order to start.
 
 ## Using a custom config
 To pass a custom config to the container use the following option:
