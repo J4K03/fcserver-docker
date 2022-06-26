@@ -20,6 +20,7 @@ RUN apt-get upgrade -y
 WORKDIR /var/fadecandy
 COPY --from=builder /fadecandy/server/fcserver ./
 COPY start_fcserver config.json ./
+RUN ["chmod", "+x", "./start_fcserver"]
 
 EXPOSE 7890
 CMD [ "./start_fcserver" ]
