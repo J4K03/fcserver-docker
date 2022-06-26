@@ -1,7 +1,7 @@
 FROM debian:11 AS builder
 
 RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get upgrade -y
 
 RUN apt-get install -y git python build-essential
 
@@ -15,7 +15,7 @@ RUN make
 FROM debian:11-slim
 
 RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get upgrade -y
 
 WORKDIR /var/fadecandy
 COPY --from=builder /fadecandy/server/fcserver ./
