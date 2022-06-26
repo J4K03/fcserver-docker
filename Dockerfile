@@ -16,11 +16,12 @@ FROM debian:11-slim
 
 RUN apt-get update
 RUN apt-get upgrade -y
+RUN apt-get -y install tini
 
 WORKDIR /var/fadecandy
 COPY --from=builder /fadecandy/server/fcserver ./
 COPY start_fcserver config.json ./
-RUN ["chmod", "+x", "./start_fcserver"]
+RUN chmod +x ./start_fcserver
 
 EXPOSE 7890
-ENTRYPOINT exec ./start_fcserver
+ENTRYPOINT ["/usr/bin/tini", "--", "./start_fcserver"]
