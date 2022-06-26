@@ -12,7 +12,6 @@ I've mapped a USB device here with the `-v` option. This is insecure and shouldn
 
 ## Using a custom config
 To pass a custom config to the container use the following option:
-## Example
 ```bash
 -v path/to/your/config.json:/var/fadecandy/config.json
 ```
