@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-trap "exit" TERM
+trap exit INT TERM
 
 # Checking if there are any USB devices in '/dev/bus/usb'. This is 
 # because libusbx, a library used by fcserver will throw an error
