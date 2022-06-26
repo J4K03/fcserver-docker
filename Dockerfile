@@ -23,4 +23,4 @@ COPY start_fcserver config.json ./
 RUN ["chmod", "+x", "./start_fcserver"]
 
 EXPOSE 7890
-CMD [ "./start_fcserver" ]
+ENTRYPOINT [ "exec", "./start_fcserver" ]
