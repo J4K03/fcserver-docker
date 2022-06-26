@@ -1,7 +1,5 @@
 #!/bin/bash
 
-trap exit INT TERM
-
 # Checking if there are any USB devices in '/dev/bus/usb'. This is 
 # because libusbx, a library used by fcserver will throw an error
 # during init if this directory doesn't exist or has no contents.
@@ -9,7 +7,7 @@ trap exit INT TERM
 if [ -n "$(ls -A /dev/bus/usb 2>/dev/null)" ]
 then
     echo "Starting fcsever..."
-    ./fcserver config.json
+    exec ./fcserver config.json
 else
     echo "ERROR: It seems that you haven't passed any USB devices to this container. fcserver needs at least one attached USB device to start."
     exit 1
