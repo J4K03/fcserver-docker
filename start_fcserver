@@ -1,5 +1,7 @@
 #!/bin/sh
 
+trap "exit" TERM
+
 # Checking if there are any USB devices in '/dev/bus/usb'. This is 
 # because libusbx, a library used by fcserver will throw an error
 # during init if this directory doesn't exist or has no contents.
