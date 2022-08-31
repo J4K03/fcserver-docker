@@ -9,4 +9,4 @@ then
 fi
 
 echo "Starting fcsever..."
-    exec ./fcserver config.json
+exec ./fcserver config.json
